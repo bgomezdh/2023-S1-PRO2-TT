@@ -1,0 +1,26 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+<main>
+    <h1><%= mensaje %></h1>
+    <section>
+        <img src="/images/auto.jpeg" alt="Auto">
+    </section>
+    <ul>
+        <% for( let i = 0; i < lista.length; i++ ) { %>
+            <li>Marca: <%= lista[i].marca %> Color: <%= lista[i].color %></li>
+        <% } %>
+    </ul>
+
+
+    <% if (usados) { %>
+     <p>Estos autos son Usados</p>
+
+     <% } else { %>
+      
+        <p>Estos autos NO son usados</p>
+
+    <% } %>
+
+</main>
+
+<%- include('./partials/footer') %>
