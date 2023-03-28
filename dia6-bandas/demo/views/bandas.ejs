@@ -1,0 +1,18 @@
+<%- include('./partials/head') %>
+
+<main>
+    
+<section class="section">
+    <% for( let i = 0; i < lista.length; i++ ) { %>
+        <article class="article">
+            <h3>Nombre: <a href="/bandas/detalle/<%= lista[i].id %>"><%= lista[i].nombre %></a></h3>
+            <h3>Genero: <a href="/bandas/genero/<%= lista[i].genero %>"><%= lista[i].genero %></a></h3>
+            <h3>Integrantes: <%= lista[i].integrantes %></h3>
+            <img src="/<%= lista[i].cover %>" alt="" width="100%">
+            
+        </article>
+    <% } %>
+</section>
+
+</main>
+
