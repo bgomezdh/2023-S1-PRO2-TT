@@ -1,4 +1,5 @@
 /* Modulo Propio */
+const e = require('express');
 const db = require('../database/models');
 const movie = db.Movie;
 
@@ -13,6 +14,7 @@ const movieController = {
     })
     .catch(function (error) {
       /* Caso con Errores */
+      console.log(error);
     });
     
   }
