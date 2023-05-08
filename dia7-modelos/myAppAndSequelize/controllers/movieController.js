@@ -1,11 +1,20 @@
 /* Modulo Propio */
-const db = require('../data/movies')
+const db = require('../database/models');
+const movie = db.Movie;
 
 const movieController = {
   findAll: (req, res) => {
-    let result = db.lista;  
+     
+    movie.findAll()
+    .then(function (result) {
+      /* caso feliz */
 
-    return res.render("movies", { listaPeliculas: result });   
+      return res.render("movies", { listaPeliculas: result });   
+    })
+    .catch(function (error) {
+      /* Caso con Errores */
+    });
+    
   }
 
 }; 
