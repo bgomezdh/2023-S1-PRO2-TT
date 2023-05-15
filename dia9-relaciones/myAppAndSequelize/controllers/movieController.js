@@ -29,9 +29,25 @@ const movieController = {
     let id = req.params.id; //4
 
     /* Crear relacion */
+    /* let rel = {
+      include: [
+        {association: "genre"},
+        {association: "actor"}
+      ]
+    }; */
 
-    movie.findByPk(id)
+    let rel = {
+      include: [{
+        all: true,
+        nested: true
+      }]
+    }
+
+    movie.findByPk(id, rel)
     .then(function(result) {
+
+      console.log(result);
+
       return res.render('detalleMovies', {
         movie: result
       })
