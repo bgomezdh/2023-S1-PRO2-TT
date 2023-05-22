@@ -9,19 +9,19 @@
           
             <!-- Formulario de Registro -->
 
-            <form class="form" action="/movies/update" method="POST">
+            <form class="form" action="/movies/update/<%= movie.id %>" method="POST">
               <div class="title">Actualizar Pelicula</div>
               <div class="input-container ic1">
-                <input id="title" class="input" type="text" name="title" placeholder="Titulo" value="" />
+                <input id="title" class="input" type="text" name="title" placeholder="Titulo" value="<%= movie.title %>" />
               </div>
               <div class="input-container ic2">
-                <input id="rating" class="input" type="number" name="rating" placeholder="Rating" min="0" max="10" value=""/>
+                <input id="rating" class="input" type="number" name="rating" placeholder="Rating" min="0" max="10" value="<%=movie.rating  %>"/>
               </div>
               <div class="input-container ic2">
-                <input id="lastname" class="input" type="number" name="awards" placeholder="Premios" min="0" max="100" value="" />
+                <input id="lastname" class="input" type="number" name="awards" placeholder="Premios" min="0" max="100" value="<%= movie.awards %>" />
               </div>
               <div class="input-container ic2">
-                  <input id="duracion" class="input" type="number" name="length" placeholder="Duración en Min" value="" min="10" max="250"/>
+                  <input id="duracion" class="input" type="number" name="length" placeholder="Duración en Min" value="<%= movie.length %>" min="10" max="250"/>
               </div>
                 <div class="input-container ic2">
                   <select class="seleccion" name="genre_id" id="genero">

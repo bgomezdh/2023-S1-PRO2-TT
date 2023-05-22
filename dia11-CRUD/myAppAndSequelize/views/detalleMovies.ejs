@@ -37,8 +37,8 @@
                   <a class="btn btnUpdate"  href="/movies/update/<%= movie.id %> ">Modificar</a>
                 </div>
                 <form action="/movies/delete" method="POST">
-                    <input type="text" hidden name="id" id="" value="<%= movie.id %>">
-                    <input class="btn btnDelete" type="submit">
+                    <input type="text" hidden name="id" value="<%= movie.id %>">
+                    <input class="btn btnDelete" type="submit" value="Eliminar">
                 </form>
               </div>
               
