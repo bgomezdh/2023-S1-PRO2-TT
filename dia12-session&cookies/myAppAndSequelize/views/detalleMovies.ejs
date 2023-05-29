@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %>
+
+  <body>
+
+    <%- include('./partials/header') %>
+    
+    <main class="container main-container">
+      <div class="card mb-3 list-group-item" style="max-width: 540px;" >
+        <div class="row g-0 tarjeta">
+          <div class="col-md-4 cont-logo">
+            <img src="/images/movies/logo-netflix.png" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Title: <%= movie.title %> </h5>
+              <p class="card-text">Rating: <%= movie.rating %></p>
+              <p class="card-text">Awards: <%= movie.awards %></p>
+              <p class="card-text">Release Date: <%= movie.release_date %></p>
+              <p class="card-text"><small class="text-muted">length : <%= movie.length %></small></p>
+              <p class="card-text">Genre:  <%= movie.genre.name %></p>
+              <% if ( movie.actor.length > 0 ) { %>
+                <p class="card-text">Actores:</p>
+                <ol>
+                  <!-- Lista de actores -->
+                  <% for( let i = 0; i < movie.actor.length; i++ ) { %>
+                  <li><%= movie.actor[i].first_name %> <%= movie.actor[i].last_name %></li>
+                  <% } %>
+                </ol>
+              <% } %>
+
+              <!-- Btn de actualizar y eliminar -->
+
+              <div class="sectionUpdate">
+                <div>
+                  <a class="btn btnUpdate"  href="/movies/update/<%= movie.id %> ">Modificar</a>
+                </div>
+                <form action="/movies/delete" method="POST">
+                    <input type="text" hidden name="id" id="" value="<%= movie.id %>">
+                    <input class="btn btnDelete" value="Eliminar" type="submit">
+                </form>
+              </div>
+              
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
