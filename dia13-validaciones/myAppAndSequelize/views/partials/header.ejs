@@ -1,0 +1,34 @@
+<header id="header">
+    <div class="contenedora">
+      <a href="/movies/all" class="itemContenedora">
+        <img src="/images/logo.png" alt="Soda Estereo" id="logo" /></a>
+
+      <nav class="menuIndex itemContenedora">
+        <ul>
+          <li>
+            <a href="/movies/all" title="películas populares">
+                Todos
+            </a>
+          </li>
+          <li>
+            <a href="/users/register" title="géneros">Registrar</a>
+          </li>
+          <li>
+            <a href="/users/login" title="géneros">Login</a>
+          </li>
+        </ul>
+      </nav>
+
+      <form action="/movies/busqueda" class="itemContenedora" method="GET">
+        <input type="text" name="pelicula" placeholder="buscar" value="" />
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <p class="alert"></p>
+      </form>
+    </div>
+
+    <% if (locals.user != null) { %>
+        <p>Bienvenido <%= locals.user.name %></p>
+    <% } %>
+  </header>
